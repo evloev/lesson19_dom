@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <div id="main">
+      <ul id="list">
+         <li>html</li>
+         <li>css</li>
+      </ul>
+   </div>
+   <div id="copyright">(c) INTOCODE</div>
+
+   <script>
+      const text = document.getElementById('one');
+      const heading = document.createElement('h1');
+      heading.textContent = 'Работа с DOM'
+
+      one.prepend(heading)
+
+
+      /* 
+      2.  Функция которая добавит внутрь div#main в самый конец ссылку на статью о DOM
+      */
+
+      const main = document.getElementById('main');
+      const a = document.createElement('a');
+      a.setAttribute('href', 'https://ru.wikipedia.org/wiki/Document_Object_Model');
+      a.prepend('ссылка');
+
+      main.append(a)
+
+      // Функция которая принимает один параметр - название цвета - 
+      // и меняет фоновый цвет всего документа на переданный в функцию
+
+      const newColor = color => document.body.style.background = color
+
+      newColor('grey')
+
+      /*
+      Функция которая принимает один параметр - 
+      текст - и добавляет в конец списка #list новый элемент li c текстом переданным в функцию.
+      */
+
+      const newItem = (text) => {
+
+         const list = document.getElementById('list')
+         const li = document.createElement('li')
+         li.textContent = text;
+
+         list.append(li)
+      }
+      newItem('hello')
+
+      //Функция которая удаляет блок с копирайтом (#copyright).
+
+      const del = () => document.getElementById('copyright').remove()
+      del()
+   </script>
+
+</body>
+
+</html>
